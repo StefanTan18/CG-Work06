@@ -43,7 +43,7 @@ void add_polygon( struct matrix *polygons,
   ====================*/
 void draw_polygons( struct matrix *polygons, screen s, color c ) {
   int p;
-  for (p = 0; point < polygons->lastcol-2; point+=3) {
+  for (p = 0; p < polygons->lastcol-2; p+=3) {
     draw_line(polygons->m[0][p], polygons->m[1][p], polygons->m[0][p+1], polygons->m[1][p+1], s, c);
     draw_line(polygons->m[0][p+1], polygons->m[1][p+1], polygons->m[0][p+2], polygons->m[1][p+2], s, c);
     draw_line(polygons->m[0][p+2], polygons->m[1][p+2], polygons->m[0][p], polygons->m[1][p], s, c);
@@ -63,7 +63,7 @@ void draw_polygons( struct matrix *polygons, screen s, color c ) {
   upper-left-front corner is (x, y, z) with width,
   height and depth dimensions.
   ====================*/
-void add_box( struct matrix * edges,
+void add_box( struct matrix * polygons,
               double x, double y, double z,
               double width, double height, double depth ) {
   double x0, y0, z0, x1, y1, z1;
