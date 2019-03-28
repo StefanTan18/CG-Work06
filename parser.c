@@ -109,7 +109,7 @@ void parse_file ( char * filename,
       sscanf(line, "%lf %lf %lf %lf %lf %lf",
        xvals, yvals, zvals,
        xvals+1, yvals+1, zvals+1);
-      add_box(edges, xvals[0], yvals[0], zvals[0],
+      add_box(polygons, xvals[0], yvals[0], zvals[0],
         xvals[1], yvals[1], zvals[1]);
     }//end of box
 
@@ -238,7 +238,7 @@ void parse_file ( char * filename,
     else if ( strncmp(line, "display", strlen(line)) == 0 ) {
       //printf("DISPLAY\t%s", line);
       clear_screen(s);
-      draw_lines(edges, s, c);
+      //draw_lines(edges, s, c);
       draw_polygons(polygons, s, c);
       display( s );
     }//end display
